@@ -1,0 +1,21 @@
+{
+	"name": "ROS",
+	"build": {
+		"context": "..",
+		"dockerfile": "../Dockerfile"
+	},
+	"remoteUser": "efliao",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/ros2_ws,type=bind",
+	"workspaceFolder": "/ros2_ws",
+	"mounts": [
+		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+	],
+	"containerEnv": {
+		"DISPLAY": "${localEnv:DISPLAY}"
+	},
+	"customizations": {
+		"vscode": {
+		  "extensions": ["ms-python.python"]
+		}
+	  }
+}
