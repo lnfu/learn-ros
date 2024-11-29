@@ -1,6 +1,9 @@
 services:
-  ros:
-    build: .
+  ros2:
+    container_name: ros2
+    build:
+      context: .
+      dockerfile: Dockerfile
     stdin_open: true
     tty: true
     environment:
@@ -8,6 +11,4 @@ services:
     user: "efliao:efliao"
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - ./src:/ros2_ws/src
-    command: >
-      ros2 run turtlesim turtlesim_node
+      - .:/ros2_ws
