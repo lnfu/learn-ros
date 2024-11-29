@@ -8,7 +8,11 @@ RUN apt-get update \
     && apt-get install -y \
     build-essential \
     vim \
+    python3-pip \
     && rm -rf /var/lib/apt/lists/*
+
+# formatter
+RUN /bin/python3 -m pip install -U yapf
 
 # RUN  source /opt/ros/${ROS_DISTRO}/setup.bash
 

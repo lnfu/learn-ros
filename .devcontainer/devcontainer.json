@@ -15,7 +15,24 @@
 	},
 	"customizations": {
 		"vscode": {
-		  "extensions": ["ms-python.python"]
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/bin/python3",
+				"editor.formatOnSave": true,
+				"editor.formatOnPaste": true,
+				"python.formatting.provider": "yapf",
+				"python.formatting.yapfArgs": [
+					"--style",
+					"{column_limit: 128}"
+				],
+				"python.linting.flake8Enabled": true,
+				"python.linting.flake8Args": [
+					"--max-line-length=128",
+					"--ignore=E131,E302"
+				]
+			},
+			"extensions": [
+				"ms-python.python"
+			]
 		}
-	  }
+	}
 }
